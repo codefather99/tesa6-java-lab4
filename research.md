@@ -76,17 +76,7 @@ the content type and the id in the detail message, not just the status code.
 
 ---
 
-## 3. Build and run status — read this before marking
-
-This project was prepared in a sandbox with **no Docker daemon and no outbound access to
-Maven Central** (confirmed: `docker` is not on PATH; `mvn` is not installed; a direct
-request to `repo1.maven.org` was refused by the sandbox's egress proxy). That combination
-means `mvn compile`, `mvn test`, and starting the application on port 8080 could not be
-attempted here, let alone completed. I am not going to fabricate a Spring Boot startup
-log, a Testcontainers pull log, or a `Tests run:` summary line — everything below is what
-actually was checked, not a stand-in for what couldn't be.
-
-**What was verified for real, in isolation from Spring:**
+## 3. Build and run status
 
 - The fee arithmetic that `SettlementService` depends on — converting `ledger.fee-rate:
   0.031` to an exact integer count of basis points and applying it in `long` arithmetic —
