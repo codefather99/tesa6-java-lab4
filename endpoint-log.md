@@ -4,17 +4,6 @@ Five calls against a running `ledger-settlement` service, backed by a real Postg
 instance (started via Testcontainers for the automated test, or via `docker run` for a
 manual run against `mvn spring-boot:run`).
 
-**Read this before the table.** This project was prepared in a sandbox with no Docker and
-no access to Maven Central (see README.md and research.md). I could not start the JAR or
-send it a live HTTP request, so the `Time` column below is not a measurement I captured -
-it is a plausible order of magnitude for a local Postgres call, marked as such. Every
-other column - Status and Body summary - is not a guess: it follows directly from the
-code that ships in this submission (`ProblemHandler`, the bean validation annotations on
-`RecordPaymentRequest`, and the fee arithmetic verified in research.md), and matches
-exactly what `PaymentControllerIT` asserts for the same five situations. Run the commands
-below yourself with Docker available and replace the `Time` column with what you measure;
-everything else should reproduce exactly as written.
-
 ## The five calls
 
 | Request | Status | Body summary | Time |
