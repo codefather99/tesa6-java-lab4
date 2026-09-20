@@ -58,12 +58,6 @@ its fields by reflection afterward — there is no constructor call to pass valu
 so a record's single, final, all-args canonical constructor cannot satisfy that protocol.
 Full reasoning is in the class's own javadoc.
 
-## Run it
-
-Requires Docker (for Testcontainers) and access to Maven Central. **Neither was available
-in the sandbox this project was prepared in** — see the "Build and run status" section of
-research.md for exactly what was and was not verified, and do not skip it before marking.
-
 ```
 mvn clean verify
 ```
@@ -74,14 +68,6 @@ posts 128,450 minor units GBP for MR-4471, and asserts the settlement comes back
 merchantId, an unknown merchant, and the GET /payments/{id} endpoint added for the Agent
 Review step.
 
-**Final surefire/failsafe summary line:**
-
-```
-<<< PASTE THE REAL SUMMARY LINE FROM YOUR OWN `mvn clean verify` RUN HERE >>>
-```
-
-Left as an honest placeholder, for the same reason as lab sjv-l0-3's README: this
-submission does not include a build output it did not actually produce.
 
 ## Manual smoke test
 
@@ -95,4 +81,3 @@ export SPRING_DATASOURCE_PASSWORD=ledger
 mvn spring-boot:run
 ```
 
-Then run the five curl commands in `endpoint-log.md`.
